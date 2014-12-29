@@ -1,0 +1,20 @@
+<div>
+	<a ng-href="{{post.url}}">{{post.title}}</a>
+	<form ng-show="signedIn()" ng-submit="addComments()">
+			<textarea ng-model="commentText"
+			placeholder="Your comment"
+			class="form-control"></textarea><br />
+			<input type="submit" value="Post comment" class="btn btn-primary">
+	</form>
+</div>
+<div ng-repeat="comment in comments" class="row cmt">
+	<div class="col-md-12">
+		<p>{{comment.text}}</p>
+		<p class='author'>Posted by
+			<a href="#/users/{{comment.creatorUID}}">{{comment.creator}}</a>
+		</p>
+		<a href="" ng-click="deleteComments(comment)" ng-show="signedIn() && comment.creatorUID === user.uid">Delete</a>
+	</div>
+</div>
+<hr>
+<a ng-href="#/posts">Back to posts</a>

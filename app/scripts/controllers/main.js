@@ -1,0 +1,18 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name angNewsApp.controller:MainCtrl
+ * @description
+ * # MainCtrl
+ * Controller of the angNewsApp
+ */
+//var app = angular.module('angNewsApp',['ngRoute']);
+
+app.controller('MainCtrl', function ($scope) {
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+  });
